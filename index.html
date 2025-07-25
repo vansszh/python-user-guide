@@ -35,8 +35,17 @@
             <h2>1. Python Basics</h2>
             
             <div class="topic">
-                <h3>Comments</h3>
-                <p>Comments help you document your code and make it readable. Python supports single-line and multi-line comments.</p>
+                <h3>Comments - Your Code's Documentation</h3>
+                <p>Comments are essential for writing maintainable code. They explain what your code does, why it does it, and how it works. Think of comments as notes to your future self and other developers. Good commenting is a hallmark of professional programming.</p>
+                <div class="info-box">
+                    <h4>💡 Why Comments Matter:</h4>
+                    <ul>
+                        <li><strong>Code Clarity:</strong> Explain complex logic and algorithms</li>
+                        <li><strong>Maintenance:</strong> Help others (and future you) understand the code</li>
+                        <li><strong>Documentation:</strong> Describe function purposes and parameters</li>
+                        <li><strong>Debugging:</strong> Temporarily disable code without deleting it</li>
+                    </ul>
+                </div>
                 <div class="code-container">
                     <pre><code class="language-python"># Single line comment - use # for quick notes
 
@@ -52,40 +61,91 @@ print("Hello World")  # This comment explains the code</code></pre>
             </div>
 
             <div class="topic">
-                <h3>Print Statements</h3>
-                <p>The print() function displays output to the console. It's your first tool for seeing results.</p>
+                <h3>Print Statements - Your Window to Output</h3>
+                <p>The print() function is your primary tool for displaying information to users and debugging your programs. It's the most fundamental way to see what your code is doing and communicate results. Understanding print() thoroughly will make you a more effective programmer.</p>
+                <div class="info-box">
+                    <h4>🔍 Print Function Features:</h4>
+                    <ul>
+                        <li><strong>Multiple Arguments:</strong> Print several values at once</li>
+                        <li><strong>Separators:</strong> Control how values are separated</li>
+                        <li><strong>End Characters:</strong> Control what comes after the output</li>
+                        <li><strong>File Output:</strong> Direct output to files instead of console</li>
+                    </ul>
+                </div>
                 <div class="code-container">
-                    <pre><code class="language-python"># Print different types of data
+                    <pre><code class="language-python"># Basic print statements
 print("Hello World")        # String output
 print(42)                   # Integer output
 print(3.14)                 # Float output
 print(9 + 9)               # Expression result: 18
 
-# Print multiple items
-print("Age:", 25)
-print("Python", "is", "awesome")</code></pre>
+# Print multiple items with automatic spacing
+print("Age:", 25)           # Output: Age: 25
+print("Python", "is", "awesome")  # Output: Python is awesome
+
+# Advanced print features
+print("Name", "Age", "City", sep=" | ")  # Custom separator
+print("Loading", end="...")              # Custom end character
+print("Done!")                           # Continues on same line
+
+# Print with formatting
+name = "Alice"
+score = 95.5
+print(f"Student: {name}, Score: {score}%")  # f-string formatting
+
+# Print for debugging
+values = [1, 2, 3, 4, 5]
+print(f"Debug - List contents: {values}")
+print(f"Debug - List length: {len(values)}")</code></pre>
                 </div>
             </div>
 
             <div class="topic">
-                <h3>Escape Sequences</h3>
-                <p>Special characters that help format your output, like creating new lines or adding tabs.</p>
+                <h3>Escape Sequences - Formatting Your Text</h3>
+                <p>Escape sequences are special character combinations that represent characters that are difficult or impossible to type directly. They give you precise control over text formatting and are essential for creating professional-looking output.</p>
+                <div class="info-box">
+                    <h4>📝 Common Escape Sequences:</h4>
+                    <ul>
+                        <li><strong>\n:</strong> New line (line break)</li>
+                        <li><strong>\t:</strong> Tab character (indentation)</li>
+                        <li><strong>\":</strong> Double quote within strings</li>
+                        <li><strong>\':</strong> Single quote within strings</li>
+                        <li><strong>\\:</strong> Backslash character</li>
+                        <li><strong>\r:</strong> Carriage return</li>
+                    </ul>
+                </div>
                 <div class="code-container">
-                    <pre><code class="language-python"># New line with \n
-print("First line\nSecond line")
+                    <pre><code class="language-python"># New line formatting
+print("First line\nSecond line\nThird line")
 
-# Tab spacing with \t
-print("Name:\tJohn")
+# Tab alignment for clean output
+print("Name:\tJohn Doe")
 print("Age:\t25")
+print("City:\tNew York")
+print("Occupation:\tDeveloper")
 
 # Multi-line strings with triple quotes
-print("""This is a
-multi-line
-string""")
+poem = """Roses are red,
+Violets are blue,
+Python is awesome,
+And so are you!"""
+print(poem)
 
-# Other useful escape sequences
-print("Quote: \"Python is great!\"")
-print("Path: C:\\Users\\Python")</code></pre>
+# Quotes within strings
+print("She said, \"Python is my favorite language!\"")
+print('He replied, \'I agree completely!\'')
+
+# File paths (Windows style)
+print("File location: C:\\Users\\Python\\Projects\\main.py")
+
+# Creating formatted tables
+print("Product\t\tPrice\t\tStock")
+print("Laptop\t\t$999\t\t15")
+print("Mouse\t\t$25\t\t50")
+print("Keyboard\t$75\t\t30")
+
+# Raw strings (ignore escape sequences)
+print(r"This is a raw string: \n \t \\")</code></pre>
                 </div>
             </div>
         </section>
@@ -95,107 +155,340 @@ print("Path: C:\\Users\\Python")</code></pre>
             <h2>2. Variables and Data Types</h2>
             
             <div class="topic">
-                <h3>Variable Basics</h3>
-                <p>Variables are containers that store data. Python automatically determines the data type.</p>
+                <h3>Variable Basics - Storing and Managing Data</h3>
+                <p>Variables are the foundation of programming. They're named containers that store data values, allowing you to save, modify, and reuse information throughout your program. Python's dynamic typing system automatically determines the data type, making it beginner-friendly while remaining powerful.</p>
+                <div class="info-box">
+                    <h4>🎯 Variable Best Practices:</h4>
+                    <ul>
+                        <li><strong>Descriptive Names:</strong> Use clear, meaningful variable names</li>
+                        <li><strong>Snake Case:</strong> Use underscores for multi-word names (user_name)</li>
+                        <li><strong>Avoid Keywords:</strong> Don't use Python reserved words</li>
+                        <li><strong>Case Sensitivity:</strong> Remember that 'Name' and 'name' are different</li>
+                        <li><strong>Constants:</strong> Use ALL_CAPS for values that shouldn't change</li>
+                    </ul>
+                </div>
                 <div class="code-container">
-                    <pre><code class="language-python"># Creating variables
-name = "Guido Van Rossum"    # String
-age = 67                     # Integer
-height = 5.9                 # Float
-is_programmer = True         # Boolean
+                    <pre><code class="language-python"># Creating variables with different data types
+name = "Guido Van Rossum"    # String - text data
+age = 67                     # Integer - whole numbers
+height = 5.9                 # Float - decimal numbers
+is_programmer = True         # Boolean - True/False values
+salary = None               # None - represents absence of value
 
 # Check data types
-print(type(name))           # <class 'str'>
-print(type(age))            # <class 'int'>
-print(type(height))         # <class 'float'>
-print(type(is_programmer))  # <class 'bool'></code></pre>
+print(f"Name: {name} (Type: {type(name).__name__})")
+print(f"Age: {age} (Type: {type(age).__name__})")
+print(f"Height: {height} (Type: {type(height).__name__})")
+print(f"Is Programmer: {is_programmer} (Type: {type(is_programmer).__name__})")
+
+# Variable reassignment (dynamic typing)
+user_id = 12345        # Initially an integer
+print(f"User ID: {user_id} (Type: {type(user_id).__name__})")
+
+user_id = "USER_12345"  # Now it's a string
+print(f"User ID: {user_id} (Type: {type(user_id).__name__})")
+
+# Multiple assignment
+x, y, z = 10, 20, 30
+print(f"x={x}, y={y}, z={z}")
+
+# Constants (by convention, use ALL_CAPS)
+PI = 3.14159
+MAX_USERS = 1000
+DEFAULT_COLOR = "blue"
+
+# Variable naming examples
+user_name = "alice"          # Good: descriptive, snake_case
+total_score = 95            # Good: clear purpose
+is_valid = True             # Good: boolean naming
+# userName = "bob"          # Avoid: camelCase in Python
+# x = "data"                # Avoid: non-descriptive names</code></pre>
                 </div>
             </div>
 
             <div class="topic">
-                <h3>Lists - Ordered Collections</h3>
-                <p>Lists store multiple items in order. They're mutable (changeable) and use square brackets.</p>
+                <h3>Lists - Dynamic Ordered Collections</h3>
+                <p>Lists are one of Python's most versatile data structures. They store multiple items in a specific order and can be modified after creation. Lists can contain different data types and grow or shrink as needed, making them perfect for managing collections of related data.</p>
+                <div class="info-box">
+                    <h4>🔧 List Capabilities:</h4>
+                    <ul>
+                        <li><strong>Ordered:</strong> Items maintain their position</li>
+                        <li><strong>Mutable:</strong> Can be changed after creation</li>
+                        <li><strong>Duplicates Allowed:</strong> Same values can appear multiple times</li>
+                        <li><strong>Mixed Types:</strong> Can store different data types together</li>
+                        <li><strong>Indexing:</strong> Access items by position (starting at 0)</li>
+                        <li><strong>Slicing:</strong> Extract portions of the list</li>
+                    </ul>
+                </div>
                 <div class="code-container">
-                    <pre><code class="language-python"># Creating lists
-fruits = ['apple', 'banana', 'orange']
+                    <pre><code class="language-python"># Creating different types of lists
+fruits = ['apple', 'banana', 'orange', 'grape']
 numbers = [1, 2, 3, 4, 5]
-mixed = ['hello', 42, 3.14, True]
+mixed_data = ['Alice', 25, True, 3.14, 'Engineer']
+empty_list = []  # Empty list to fill later
 
-# Accessing elements (indexing starts at 0)
-print(fruits[0])        # 'apple'
-print(fruits[-1])       # 'orange' (last item)
+# Accessing elements with indexing
+print(f"First fruit: {fruits[0]}")      # apple
+print(f"Last fruit: {fruits[-1]}")      # grape
+print(f"Second fruit: {fruits[1]}")     # banana
+
+# List slicing (extracting portions)
+print(f"First 3 fruits: {fruits[0:3]}")     # ['apple', 'banana', 'orange']
+print(f"Last 2 fruits: {fruits[-2:]}")      # ['orange', 'grape']
+print(f"Every other fruit: {fruits[::2]}")  # ['apple', 'orange']
 
 # Modifying lists
-fruits[0] = 'mango'     # Change first item
-fruits.append('grape')  # Add to end
-print(fruits)           # ['mango', 'banana', 'orange', 'grape']</code></pre>
+fruits[0] = 'mango'           # Change first item
+fruits.append('kiwi')         # Add to end
+fruits.insert(1, 'pineapple') # Insert at specific position
+print(f"Modified fruits: {fruits}")
+
+# List methods for manipulation
+shopping_list = ['bread', 'milk', 'eggs']
+shopping_list.extend(['cheese', 'butter'])  # Add multiple items
+shopping_list.remove('milk')                # Remove specific item
+popped_item = shopping_list.pop()           # Remove and return last item
+print(f"Shopping list: {shopping_list}")
+print(f"Removed item: {popped_item}")
+
+# List information and searching
+scores = [85, 92, 78, 96, 88, 92]
+print(f"List length: {len(scores)}")
+print(f"Highest score: {max(scores)}")
+print(f"Lowest score: {min(scores)}")
+print(f"Average score: {sum(scores) / len(scores):.1f}")
+print(f"Count of 92: {scores.count(92)}")
+print(f"Index of 96: {scores.index(96)}")
+
+# List comprehension (advanced)
+squared_numbers = [x**2 for x in range(1, 6)]
+print(f"Squared numbers: {squared_numbers}")  # [1, 4, 9, 16, 25]</code></pre>
                 </div>
             </div>
 
             <div class="topic">
-                <h3>Tuples - Immutable Collections</h3>
-                <p>Tuples are like lists but cannot be changed after creation. They use parentheses.</p>
+                <h3>Tuples - Immutable Ordered Collections</h3>
+                <p>Tuples are ordered collections that cannot be changed after creation. This immutability makes them perfect for storing data that shouldn't be modified, like coordinates, database records, or configuration settings. They're faster than lists and can be used as dictionary keys.</p>
+                <div class="info-box">
+                    <h4>🔒 Tuple Advantages:</h4>
+                    <ul>
+                        <li><strong>Immutable:</strong> Cannot be changed, ensuring data integrity</li>
+                        <li><strong>Faster:</strong> More efficient than lists for read-only data</li>
+                        <li><strong>Hashable:</strong> Can be used as dictionary keys</li>
+                        <li><strong>Unpacking:</strong> Easy assignment to multiple variables</li>
+                        <li><strong>Return Multiple Values:</strong> Functions can return tuples</li>
+                    </ul>
+                </div>
                 <div class="code-container">
                     <pre><code class="language-python"># Creating tuples
 coordinates = (10, 20)
-person = ('John', 25, 'Engineer')
-colors = ('red', 'green', 'blue')
+person_info = ('Alice', 28, 'Software Engineer', 'New York')
+rgb_colors = ('red', 'green', 'blue')
+single_item = (42,)  # Note the comma for single-item tuples
+empty_tuple = ()
 
 # Accessing elements
-print(coordinates[0])   # 10
-print(person[1])        # 25
+print(f"X coordinate: {coordinates[0]}")
+print(f"Y coordinate: {coordinates[1]}")
+print(f"Person name: {person_info[0]}")
+print(f"Person age: {person_info[1]}")
 
-# Tuples are immutable
-# coordinates[0] = 15   # This would cause an error!
+# Tuple slicing (like lists)
+print(f"First two person details: {person_info[:2]}")
+print(f"Last two details: {person_info[-2:]}")
 
-# Tuple unpacking
+# Tuple unpacking (very useful!)
 x, y = coordinates
-print(f"X: {x}, Y: {y}")</code></pre>
+name, age, job, city = person_info
+print(f"Coordinates: X={x}, Y={y}")
+print(f"Person: {name}, {age} years old, works as {job} in {city}")
+
+# Partial unpacking with *
+first, *middle, last = (1, 2, 3, 4, 5)
+print(f"First: {first}, Middle: {middle}, Last: {last}")
+
+# Tuples are immutable - this would cause an error:
+# coordinates[0] = 15  # TypeError: 'tuple' object does not support item assignment
+
+# Tuple methods
+numbers = (1, 2, 3, 2, 4, 2, 5)
+print(f"Count of 2: {numbers.count(2)}")
+print(f"Index of 4: {numbers.index(4)}")
+print(f"Tuple length: {len(numbers)}")
+
+# Practical example: Function returning multiple values
+def get_name_age():
+    return "Bob", 30  # Returns a tuple
+
+user_name, user_age = get_name_age()
+print(f"User: {user_name}, Age: {user_age}")
+
+# Using tuples as dictionary keys
+locations = {
+    (0, 0): "Origin",
+    (1, 2): "Point A",
+    (-1, -1): "Point B"
+}
+print(f"Location at (1, 2): {locations[(1, 2)]}")</code></pre>
                 </div>
             </div>
 
             <div class="topic">
-                <h3>Sets - Unique Collections</h3>
-                <p>Sets automatically remove duplicates and store unique values only.</p>
+                <h3>Sets - Unique Value Collections</h3>
+                <p>Sets are unordered collections of unique elements. They automatically eliminate duplicates and provide powerful operations for comparing and combining collections. Sets are perfect for membership testing, removing duplicates, and mathematical set operations like unions and intersections.</p>
+                <div class="info-box">
+                    <h4>⚡ Set Operations:</h4>
+                    <ul>
+                        <li><strong>Unique Elements:</strong> Automatically removes duplicates</li>
+                        <li><strong>Fast Membership Testing:</strong> Quickly check if item exists</li>
+                        <li><strong>Mathematical Operations:</strong> Union, intersection, difference</li>
+                        <li><strong>Mutable:</strong> Can add/remove elements after creation</li>
+                        <li><strong>Unordered:</strong> No guaranteed order of elements</li>
+                    </ul>
+                </div>
                 <div class="code-container">
                     <pre><code class="language-python"># Creating sets
-numbers = {1, 2, 3, 3, 4, 4, 5}  # Duplicates removed
-print(numbers)  # {1, 2, 3, 4, 5}
+unique_numbers = {1, 2, 3, 3, 4, 4, 5}  # Duplicates automatically removed
+print(f"Unique numbers: {unique_numbers}")  # {1, 2, 3, 4, 5}
+
+# Creating sets from lists (removes duplicates)
+duplicates_list = [1, 2, 2, 3, 3, 3, 4]
+unique_from_list = set(duplicates_list)
+print(f"Original list: {duplicates_list}")
+print(f"Unique values: {unique_from_list}")
 
 # Set operations
-set1 = {1, 2, 3}
-set2 = {3, 4, 5}
+students_math = {'Alice', 'Bob', 'Charlie', 'Diana'}
+students_science = {'Bob', 'Diana', 'Eve', 'Frank'}
 
-print(set1.union(set2))         # {1, 2, 3, 4, 5}
-print(set1.intersection(set2))  # {3}
-print(set1.difference(set2))    # {1, 2}</code></pre>
+# Union (all students in either class)
+all_students = students_math.union(students_science)
+print(f"All students: {all_students}")
+
+# Intersection (students in both classes)
+both_classes = students_math.intersection(students_science)
+print(f"Students in both classes: {both_classes}")
+
+# Difference (students only in math)
+only_math = students_math.difference(students_science)
+print(f"Only in math class: {only_math}")
+
+# Symmetric difference (students in exactly one class)
+exactly_one_class = students_math.symmetric_difference(students_science)
+print(f"In exactly one class: {exactly_one_class}")
+
+# Set methods
+fruits = {'apple', 'banana', 'orange'}
+fruits.add('grape')           # Add single element
+fruits.update(['kiwi', 'mango'])  # Add multiple elements
+print(f"Updated fruits: {fruits}")
+
+fruits.remove('banana')       # Remove element (raises error if not found)
+fruits.discard('pineapple')   # Remove element (no error if not found)
+print(f"After removal: {fruits}")
+
+# Membership testing (very fast)
+print(f"Is 'apple' in fruits? {'apple' in fruits}")
+print(f"Is 'banana' in fruits? {'banana' in fruits}")
+
+# Practical example: Finding common interests
+alice_hobbies = {'reading', 'swimming', 'coding', 'music'}
+bob_hobbies = {'gaming', 'coding', 'music', 'sports'}
+
+common_hobbies = alice_hobbies & bob_hobbies  # Shorthand for intersection
+print(f"Alice and Bob both enjoy: {common_hobbies}")
+
+# Set comprehension
+squared_evens = {x**2 for x in range(10) if x % 2 == 0}
+print(f"Squared even numbers: {squared_evens}")</code></pre>
                 </div>
             </div>
 
             <div class="topic">
-                <h3>Dictionaries - Key-Value Pairs</h3>
-                <p>Dictionaries store data in key-value pairs, perfect for structured information.</p>
+                <h3>Dictionaries - Key-Value Data Storage</h3>
+                <p>Dictionaries are Python's most flexible data structure, storing data as key-value pairs. They're like real-world dictionaries where you look up a word (key) to find its definition (value). Dictionaries are perfect for representing structured data, configurations, and creating fast lookups.</p>
+                <div class="info-box">
+                    <h4>🗝️ Dictionary Features:</h4>
+                    <ul>
+                        <li><strong>Key-Value Pairs:</strong> Associate keys with values for fast lookup</li>
+                        <li><strong>Mutable:</strong> Can be modified after creation</li>
+                        <li><strong>Unique Keys:</strong> Each key can appear only once</li>
+                        <li><strong>Any Data Type:</strong> Values can be any Python object</li>
+                        <li><strong>Fast Access:</strong> O(1) average time complexity for lookups</li>
+                        <li><strong>Ordered:</strong> Maintain insertion order (Python 3.7+)</li>
+                    </ul>
+                </div>
                 <div class="code-container">
                     <pre><code class="language-python"># Creating dictionaries
 student = {
-    "name": "Alice",
+    "name": "Alice Johnson",
     "age": 20,
     "grade": "A",
-    "is_enrolled": True
+    "subjects": ["Math", "Physics", "Computer Science"],
+    "is_enrolled": True,
+    "gpa": 3.8
 }
 
 # Accessing values
-print(student["name"])      # Alice
-print(student.get("age"))   # 20
+print(f"Student name: {student['name']}")
+print(f"Student age: {student.get('age')}")
+print(f"Student phone: {student.get('phone', 'Not provided')}")  # Default value
 
 # Modifying dictionaries
-student["age"] = 21         # Update value
-student["city"] = "NYC"     # Add new key-value pair
+student["age"] = 21                    # Update existing value
+student["email"] = "alice@email.com"   # Add new key-value pair
+student["subjects"].append("Chemistry") # Modify nested list
+
+print(f"Updated student info: {student}")
 
 # Dictionary methods
-print(student.keys())       # All keys
-print(student.values())     # All values
-print(student.items())      # All key-value pairs</code></pre>
+print(f"All keys: {list(student.keys())}")
+print(f"All values: {list(student.values())}")
+print(f"All items: {list(student.items())}")
+
+# Iterating through dictionaries
+print("\nStudent Information:")
+for key, value in student.items():
+    print(f"{key.title()}: {value}")
+
+# Nested dictionaries (complex data structures)
+company = {
+    "name": "Tech Corp",
+    "employees": {
+        "john": {"position": "Developer", "salary": 75000},
+        "sarah": {"position": "Designer", "salary": 65000},
+        "mike": {"position": "Manager", "salary": 85000}
+    },
+    "departments": ["Engineering", "Design", "Marketing"]
+}
+
+print(f"\nJohn's salary: ${company['employees']['john']['salary']:,}")
+print(f"Company departments: {', '.join(company['departments'])}")
+
+# Dictionary methods for manipulation
+scores = {"Alice": 95, "Bob": 87, "Charlie": 92}
+
+# Remove items
+removed_score = scores.pop("Bob")  # Remove and return value
+print(f"Removed Bob's score: {removed_score}")
+print(f"Remaining scores: {scores}")
+
+# Update with another dictionary
+new_scores = {"Diana": 89, "Eve": 94}
+scores.update(new_scores)
+print(f"Updated scores: {scores}")
+
+# Dictionary comprehension
+squared_dict = {x: x**2 for x in range(1, 6)}
+print(f"Squared numbers: {squared_dict}")
+
+# Practical example: Word frequency counter
+text = "python is great python is powerful python is fun"
+word_count = {}
+for word in text.split():
+    word_count[word] = word_count.get(word, 0) + 1
+
+print(f"\nWord frequencies: {word_count}")</code></pre>
                 </div>
             </div>
         </section>
