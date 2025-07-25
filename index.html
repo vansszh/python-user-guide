@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Complete Python Tutorial - Learn Python from Scratch</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <h1 class="nav-title">🐍 Python Tutorial</h1>
+            <div class="nav-menu">
+                <a href="#basics" class="nav-link">Basics</a>
+                <a href="#variables" class="nav-link">Variables</a>
+                <a href="#typecasting" class="nav-link">Typecasting</a>
+                <a href="#strings" class="nav-link">Strings</a>
+                <a href="#conditionals" class="nav-link">Conditionals</a>
+            </div>
+        </div>
+    </nav>
+
+    <header class="hero">
+        <div class="hero-content">
+            <h1>Complete Python Tutorial for Beginners</h1>
+            <p>Master Python programming from basics to advanced concepts with interactive examples</p>
+            <div class="author">Made with ❤️ by <strong>viktorexe</strong></div>
+        </div>
+    </header>
+
+    <main class="container">
+        <!-- Basics Section -->
+        <section id="basics" class="section">
+            <h2>1. Python Basics</h2>
+            
+            <div class="topic">
+                <h3>Comments</h3>
+                <p>Comments help you document your code and make it readable. Python supports single-line and multi-line comments.</p>
+                <div class="code-container">
+                    <pre><code class="language-python"># Single line comment - use # for quick notes
+
+'''
+Multi-line comments
+can span multiple lines
+and are great for documentation
+'''
+
+# Comments are ignored by Python interpreter
+print("Hello World")  # This comment explains the code</code></pre>
+                </div>
+            </div>
+
+            <div class="topic">
+                <h3>Print Statements</h3>
+                <p>The print() function displays output to the console. It's your first tool for seeing results.</p>
+                <div class="code-container">
+                    <pre><code class="language-python"># Print different types of data
+print("Hello World")        # String output
+print(42)                   # Integer output
+print(3.14)                 # Float output
+print(9 + 9)               # Expression result: 18
+
+# Print multiple items
+print("Age:", 25)
+print("Python", "is", "awesome")</code></pre>
+                </div>
+            </div>
+
+            <div class="topic">
+                <h3>Escape Sequences</h3>
+                <p>Special characters that help format your output, like creating new lines or adding tabs.</p>
+                <div class="code-container">
+                    <pre><code class="language-python"># New line with \n
+print("First line\nSecond line")
+
+# Tab spacing with \t
+print("Name:\tJohn")
+print("Age:\t25")
+
+# Multi-line strings with triple quotes
+print("""This is a
+multi-line
+string""")
+
+# Other useful escape sequences
+print("Quote: \"Python is great!\"")
+print("Path: C:\\Users\\Python")</code></pre>
+                </div>
+            </div>
+        </section>
+
+        <!-- Variables Section -->
+        <section id="variables" class="section">
+            <h2>2. Variables and Data Types</h2>
+            
+            <div class="topic">
+                <h3>Variable Basics</h3>
+                <p>Variables are containers that store data. Python automatically determines the data type.</p>
+                <div class="code-container">
+                    <pre><code class="language-python"># Creating variables
+name = "Guido Van Rossum"    # String
+age = 67                     # Integer
+height = 5.9                 # Float
+is_programmer = True         # Boolean
+
+# Check data types
+print(type(name))           # <class 'str'>
+print(type(age))            # <class 'int'>
+print(type(height))         # <class 'float'>
+print(type(is_programmer))  # <class 'bool'></code></pre>
+                </div>
+            </div>
+
+            <div class="topic">
+                <h3>Lists - Ordered Collections</h3>
+                <p>Lists store multiple items in order. They're mutable (changeable) and use square brackets.</p>
+                <div class="code-container">
+                    <pre><code class="language-python"># Creating lists
+fruits = ['apple', 'banana', 'orange']
+numbers = [1, 2, 3, 4, 5]
+mixed = ['hello', 42, 3.14, True]
+
+# Accessing elements (indexing starts at 0)
+print(fruits[0])        # 'apple'
+print(fruits[-1])       # 'orange' (last item)
+
+# Modifying lists
+fruits[0] = 'mango'     # Change first item
+fruits.append('grape')  # Add to end
+print(fruits)           # ['mango', 'banana', 'orange', 'grape']</code></pre>
+                </div>
+            </div>
+
+            <div class="topic">
+                <h3>Tuples - Immutable Collections</h3>
+                <p>Tuples are like lists but cannot be changed after creation. They use parentheses.</p>
+                <div class="code-container">
+                    <pre><code class="language-python"># Creating tuples
+coordinates = (10, 20)
+person = ('John', 25, 'Engineer')
+colors = ('red', 'green', 'blue')
+
+# Accessing elements
+print(coordinates[0])   # 10
+print(person[1])        # 25
+
+# Tuples are immutable
+# coordinates[0] = 15   # This would cause an error!
+
+# Tuple unpacking
+x, y = coordinates
+print(f"X: {x}, Y: {y}")</code></pre>
+                </div>
+            </div>
+
+            <div class="topic">
+                <h3>Sets - Unique Collections</h3>
+                <p>Sets automatically remove duplicates and store unique values only.</p>
+                <div class="code-container">
+                    <pre><code class="language-python"># Creating sets
+numbers = {1, 2, 3, 3, 4, 4, 5}  # Duplicates removed
+print(numbers)  # {1, 2, 3, 4, 5}
+
+# Set operations
+set1 = {1, 2, 3}
+set2 = {3, 4, 5}
+
+print(set1.union(set2))         # {1, 2, 3, 4, 5}
+print(set1.intersection(set2))  # {3}
+print(set1.difference(set2))    # {1, 2}</code></pre>
+                </div>
+            </div>
+
+            <div class="topic">
+                <h3>Dictionaries - Key-Value Pairs</h3>
+                <p>Dictionaries store data in key-value pairs, perfect for structured information.</p>
+                <div class="code-container">
+                    <pre><code class="language-python"># Creating dictionaries
+student = {
+    "name": "Alice",
+    "age": 20,
+    "grade": "A",
+    "is_enrolled": True
+}
+
+# Accessing values
+print(student["name"])      # Alice
+print(student.get("age"))   # 20
+
+# Modifying dictionaries
+student["age"] = 21         # Update value
+student["city"] = "NYC"     # Add new key-value pair
+
+# Dictionary methods
+print(student.keys())       # All keys
+print(student.values())     # All values
+print(student.items())      # All key-value pairs</code></pre>
+                </div>
+            </div>
+        </section>
+
+        <!-- Typecasting Section -->
+        <section id="typecasting" class="section">
+            <h2>3. Typecasting and User Input</h2>
+            
+            <div class="topic">
+                <h3>Type Conversion</h3>
+                <p>Convert between different data types when needed for calculations or operations.</p>
+                <div class="code-container">
+                    <pre><code class="language-python"># String to number conversion
+age_str = "25"
+age_num = int(age_str)
+print(age_num + 5)          # 30
+
+# Number to string conversion
+score = 95
+message = "Your score is " + str(score)
+print(message)              # Your score is 95
+
+# Float conversions
+price = "19.99"
+price_float = float(price)
+print(price_float * 2)      # 39.98
+
+# Boolean conversions
+print(bool(1))              # True
+print(bool(0))              # False
+print(bool(""))             # False
+print(bool("hello"))        # True</code></pre>
+                </div>
+            </div>
+
+            <div class="topic">
+                <h3>User Input</h3>
+                <p>Get input from users to make your programs interactive and dynamic.</p>
+                <div class="code-container">
+                    <pre><code class="language-python"># Basic input (always returns string)
+name = input("Enter your name: ")
+print(f"Hello, {name}!")
+
+# Converting input to numbers
+age = int(input("Enter your age: "))
+height = float(input("Enter your height: "))
+
+# Using input in calculations
+current_age = int(input("Current age: "))
+future_age = current_age + 10
+print(f"In 10 years, you'll be {future_age}")
+
+# Multiple inputs at once
+values = input("Enter two numbers: ").split()
+num1, num2 = int(values[0]), int(values[1])
+print(f"Sum: {num1 + num2}")
+
+# Input validation example
+while True:
+    try:
+        number = int(input("Enter a number: "))
+        break
+    except ValueError:
+        print("Please enter a valid number!")</code></pre>
+                </div>
+            </div>
+        </section>
+
+        <!-- Strings Section -->
+        <section id="strings" class="section">
+            <h2>4. String Operations</h2>
+            
+            <div class="topic">
+                <h3>String Basics</h3>
+                <p>Strings are sequences of characters. Python provides many ways to work with text.</p>
+                <div class="code-container">
+                    <pre><code class="language-python"># Creating strings
+name = "Python"
+message = 'Learning is fun!'
+multiline = """This is a
+multiline string
+example"""
+
+# String indexing and slicing
+print(name[0])          # 'P' (first character)
+print(name[-1])         # 'n' (last character)
+print(name[0:3])        # 'Pyt' (slice from 0 to 2)
+print(name[2:])         # 'thon' (from index 2 to end)
+
+# String length
+print(len(name))        # 6</code></pre>
+                </div>
+            </div>
+
+            <div class="topic">
+                <h3>String Methods</h3>
+                <p>Python provides many built-in methods to manipulate and analyze strings.</p>
+                <div class="code-container">
+                    <pre><code class="language-python">text = "  Hello World  "
+
+# Case conversion
+print(text.upper())         # "  HELLO WORLD  "
+print(text.lower())         # "  hello world  "
+print(text.title())         # "  Hello World  "
+print(text.capitalize())    # "  hello world  "
+
+# Whitespace removal
+print(text.strip())         # "Hello World"
+print(text.lstrip())        # "Hello World  "
+print(text.rstrip())        # "  Hello World"
+
+# String searching and replacing
+print(text.find("World"))   # 8 (index of "World")
+print(text.replace("World", "Python"))  # "  Hello Python  "
+print(text.count("l"))      # 3 (count of 'l')
+
+# String checking methods
+email = "user@example.com"
+print(email.startswith("user"))    # True
+print(email.endswith(".com"))      # True
+print("123".isdigit())             # True
+print("abc".isalpha())             # True</code></pre>
+                </div>
+            </div>
+
+            <div class="topic">
+                <h3>String Formatting</h3>
+                <p>Modern ways to format strings with variables and expressions.</p>
+                <div class="code-container">
+                    <pre><code class="language-python">name = "Alice"
+age = 25
+score = 95.5
+
+# f-strings (recommended)
+message = f"Hello {name}, you are {age} years old"
+print(message)
+
+# With expressions
+print(f"Next year you'll be {age + 1}")
+print(f"Your score: {score:.1f}%")
+
+# .format() method
+template = "Name: {}, Age: {}, Score: {:.2f}"
+print(template.format(name, age, score))
+
+# % formatting (older style)
+print("Hello %s, you scored %.1f%%" % (name, score))</code></pre>
+                </div>
+            </div>
+        </section>
+
+        <!-- Conditionals Section -->
+        <section id="conditionals" class="section">
+            <h2>5. Conditional Statements</h2>
+            
+            <div class="topic">
+                <h3>If-Else Statements</h3>
+                <p>Make decisions in your code based on conditions. Control the flow of your program.</p>
+                <div class="code-container">
+                    <pre><code class="language-python"># Basic if-else
+age = int(input("Enter your age: "))
+
+if age >= 18:
+    print("You can vote!")
+else:
+    print("You cannot vote yet.")
+
+# Multiple conditions with elif
+score = 85
+
+if score >= 90:
+    grade = "A"
+elif score >= 80:
+    grade = "B"
+elif score >= 70:
+    grade = "C"
+elif score >= 60:
+    grade = "D"
+else:
+    grade = "F"
+
+print(f"Your grade is: {grade}")
+
+# Nested conditions
+weather = "sunny"
+temperature = 25
+
+if weather == "sunny":
+    if temperature > 20:
+        print("Perfect day for a picnic!")
+    else:
+        print("Sunny but a bit cold.")
+else:
+    print("Maybe stay indoors.")</code></pre>
+                </div>
+            </div>
+
+            <div class="topic">
+                <h3>Comparison Operators</h3>
+                <p>Operators used to compare values and create conditions.</p>
+                <div class="code-container">
+                    <pre><code class="language-python"># Comparison operators
+a, b = 10, 20
+
+print(a == b)    # False (equal to)
+print(a != b)    # True  (not equal to)
+print(a < b)     # True  (less than)
+print(a > b)     # False (greater than)
+print(a <= b)    # True  (less than or equal)
+print(a >= b)    # False (greater than or equal)
+
+# Logical operators
+x, y, z = 5, 10, 15
+
+print(x < y and y < z)      # True (both conditions true)
+print(x > y or y < z)       # True (at least one true)
+print(not x > y)            # True (opposite of false)
+
+# Membership operators
+fruits = ["apple", "banana", "orange"]
+print("apple" in fruits)        # True
+print("grape" not in fruits)    # True</code></pre>
+                </div>
+            </div>
+
+            <div class="topic">
+                <h3>Advanced Conditionals</h3>
+                <p>More complex conditional patterns and best practices.</p>
+                <div class="code-container">
+                    <pre><code class="language-python"># Ternary operator (conditional expression)
+age = 20
+status = "adult" if age >= 18 else "minor"
+print(status)  # adult
+
+# Multiple conditions
+username = "admin"
+password = "secret123"
+is_logged_in = True
+
+if username == "admin" and password == "secret123" and is_logged_in:
+    print("Access granted")
+else:
+    print("Access denied")
+
+# Checking multiple values
+day = "Saturday"
+if day in ["Saturday", "Sunday"]:
+    print("It's weekend!")
+else:
+    print("It's a weekday.")
+
+# Guard clauses (early returns in functions)
+def process_age(age):
+    if age < 0:
+        return "Invalid age"
+    if age < 13:
+        return "Child"
+    if age < 20:
+        return "Teenager"
+    return "Adult"
+
+print(process_age(16))  # Teenager</code></pre>
+                </div>
+            </div>
+        </section>
+
+        <!-- Next Steps Section -->
+        <section class="section">
+            <h2>🚀 Next Steps</h2>
+            <div class="next-steps">
+                <div class="step-card">
+                    <h3>Loops</h3>
+                    <p>Learn for and while loops to repeat code efficiently</p>
+                </div>
+                <div class="step-card">
+                    <h3>Functions</h3>
+                    <p>Create reusable code blocks with parameters and return values</p>
+                </div>
+                <div class="step-card">
+                    <h3>File Handling</h3>
+                    <p>Read from and write to files on your computer</p>
+                </div>
+                <div class="step-card">
+                    <h3>Error Handling</h3>
+                    <p>Handle exceptions and errors gracefully in your programs</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <p>&copy; 2024 Python Tutorial by <strong>viktorexe</strong></p>
+            <p>Keep coding, keep learning! 🐍</p>
+        </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-core.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
